@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+</head>
+
+<body>
+    <header>
+        <h1>Travel Planner</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Plan Your Trip</h2>
+            <form id="trip-form">
+                <div id="destinations-container">
+                    <div class="destination">
+                        <input type="text" class="city" placeholder="Enter a city" required>
+                        <input type="date" class="date" required>
+                    </div>
+                </div>
+                <button type="button" id="add-destination">Add Destination</button>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section id="result" class="result-section">
+            <h2>Trip Details</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Travel Planner | Made with Sama</p>
+    </footer>
+    <script src="../index.js"></script>
+
+</body>
+
+</html>
