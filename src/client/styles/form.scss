@@ -25,9 +25,6 @@ button {
     cursor: pointer;
     transition: background 0.3s;
 
-    &:hover {
-        background-color: darken($primary-color, 10%);
-    }
 }
 /* Styles for the form section */
 .form-section {

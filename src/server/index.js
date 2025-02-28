@@ -33,8 +33,12 @@ async function getWeatherData(lat, lng) {
     if (!weatherData.data || weatherData.data.length === 0) {
         throw new Error('Weather data not available.');
     }
-    return weatherData.data[0];
+    return {
+        temperature: weatherData.data[0].temp,
+        description: weatherData.data[0].weather.description
+    };
 }
+
 
 // Function to get city image from Pixabay
 async function getCityImage(city) {
