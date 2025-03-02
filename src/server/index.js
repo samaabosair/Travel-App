@@ -39,7 +39,6 @@ async function getWeatherData(lat, lng) {
     };
 }
 
-
 // Function to get city image from Pixabay
 async function getCityImage(city) {
     const pixabayResponse = await axios.get(`https://pixabay.com/api/?key=${pixabayKey}&q=${encodeURIComponent(city)}&image_type=photo`);
@@ -72,9 +71,9 @@ app.post('/get-city-data', async (req, res) => {
     }
 });
 
-// Default route
+// Default route - redirect to frontend
 app.get('/', (req, res) => {
-    res.send("Welcome to the City Data API");
+    res.redirect('http://localhost:3000');
 });
 
 // Start server

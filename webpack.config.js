@@ -12,8 +12,8 @@ module.exports = (env, argv) => {
     return {
         entry: './src/client/index.js',
         mode: isDevelopment ? 'development' : 'production',
-        devtool: isDevelopment ? 'source-map' : false,  // فقط في بيئة التطوير
-        stats: 'verbose', // طباعة التفاصيل
+        devtool: isDevelopment ? 'source-map' : false, 
+        stats: 'verbose', 
 
         module: {
             rules: [
@@ -25,19 +25,19 @@ module.exports = (env, argv) => {
                 {
                     test: /\.scss$/,
                     use: isDevelopment
-                        ? ['style-loader', 'css-loader', 'sass-loader'] // في بيئة التطوير
-                        : [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] // في بيئة الإنتاج
+                        ? ['style-loader', 'css-loader', 'sass-loader'] 
+                        : [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] 
                 }
             ]
         },
 
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: isDevelopment ? 'index.js' : '[name].[contenthash].js',  // تحسين الملفات في بيئة الإنتاج
+            filename: isDevelopment ? 'index.js' : '[name].[contenthash].js',  
         },
 
         optimization: {
-            minimize: !isDevelopment,  // التصغير في بيئة الإنتاج فقط
+            minimize: !isDevelopment, 
             minimizer: !isDevelopment ? [
                 new CssMinimizerPlugin(),
                 new TerserPlugin()
@@ -61,7 +61,7 @@ module.exports = (env, argv) => {
                     clientsClaim: true,
                     skipWaiting: true,
                 })
-            ])  // إضافة Workbox و MiniCss في بيئة الإنتاج فقط
+            ])  
         ],
 
         devServer: {
@@ -72,7 +72,7 @@ module.exports = (env, argv) => {
                 publicPath: '/',
             },
             headers: {
-                'Service-Worker-Allowed': '/',  // السماح لـ Service Worker
+                'Service-Worker-Allowed': '/',  
             }
         }
     };
